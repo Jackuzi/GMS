@@ -2,12 +2,18 @@
   <v-data-table
     :headers="headers"
     :items="jobs"
-    sort-by="jobNo"
+    sort-by="date"
     class="elevation-1"
   >
     <template v-slot:top>
       <v-form v-model="isValid">
-        <v-dialog v-model="dialog" max-width="500px" persistent>
+        <v-dialog
+          v-model="dialog"
+          hide-overlay
+          transition="dialog-bottom-transition"
+          fullscreen
+          persistent
+        >
           <template v-slot:activator="{ on, attrs }">
             <v-btn
               color="primary"
@@ -234,21 +240,21 @@ export default {
         },
         {
           jobNo: "123",
-          date: "11/02/2020",
+          date: "08/03/2020",
           car: "Focus",
           description: "some description",
           parts: "List of parts used",
         },
         {
           jobNo: "123",
-          date: "11/02/2020",
+          date: "09/02/2020",
           car: "Focus",
           description: "some description",
           parts: "List of parts used",
         },
         {
           jobNo: "123",
-          date: "11/02/2020",
+          date: "10/02/2020",
           car: "Focus",
           description: "some description",
           parts: "List of parts used",
