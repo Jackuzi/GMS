@@ -90,7 +90,7 @@ export default {
       { icon: "mdi-clock", text: "Mots", link: "mots" },
       { icon: "mdi-receipt", text: "Invoices", link: "invoices" },
     ],
-    settingsLink: { icon: "mdi-cog", text: "Cars", link: "settings" },
+    settingsLink: { icon: "mdi-cog", text: "Settings", link: "settings" },
   }),
   created() {
     this.$vuetify.theme.dark = false;
