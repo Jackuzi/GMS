@@ -19,7 +19,11 @@
                                 <v-text-field v-model="editedItem.jobNo" :rules="[(v) => !!v || 'jobNo is required']" :counter="10" label="Job No" required></v-text-field>
                             </v-col>
 
-                            <!-- <v-col cols="12" md="4">
+                            <v-col cols="12" md="4">
+                                <DatePicker :editedItem="editedItem" />
+                            </v-col>
+                            <!-- 
+                            <v-col cols="12" md="4">
                                 <v-text-field v-model="customer.lastname" :rules="nameRules" :counter="10" label="Last name" required></v-text-field>
                             </v-col>
 
@@ -42,10 +46,12 @@
     </v-form>
 </template>
 
-
-
 <script>
+import DatePicker from "../components/DatePicker";
+
 export default {
+    components: { DatePicker },
+
     name: "JobModal",
     props: {
         dialog: {
@@ -70,7 +76,7 @@ export default {
             },
             defaultItem: {
                 jobNo: null,
-                date: null,
+                date: new Date().toISOString().substr(0, 10),
                 car: null,
                 description: null,
                 parts: null,
@@ -100,7 +106,7 @@ export default {
         },
 
         save() {
-            if (this.eindex > -1) {
+            if (this.editedIndex > -1) {
                 Object.assign(this.jobs[this.editedIndex], this.editedItem);
             } else {
                 this.jobs.push(this.editedItem);

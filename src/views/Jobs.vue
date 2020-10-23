@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import JobModal from "../components/JobModal.vue";
+import JobModal from "../components/JobModal";
 
 export default {
     components: { JobModal },
@@ -54,56 +54,56 @@ export default {
             this.jobs = [
                 {
                     jobNo: "123",
-                    date: "11/02/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
                 },
                 {
                     jobNo: "1234",
-                    date: "11/02/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
                 },
                 {
                     jobNo: "125",
-                    date: "11/02/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
                 },
                 {
                     jobNo: "126",
-                    date: "11/02/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
                 },
                 {
                     jobNo: "127",
-                    date: "11/02/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
                 },
                 {
                     jobNo: "128",
-                    date: "08/03/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
                 },
                 {
                     jobNo: "129",
-                    date: "09/02/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
                 },
                 {
                     jobNo: "1212",
-                    date: "10/02/2020",
+                    date: "2020-10-31",
                     car: "Focus",
                     description: "some description",
                     parts: "List of parts used",
