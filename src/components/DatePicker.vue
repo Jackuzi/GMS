@@ -5,7 +5,7 @@
         </template>
         <v-date-picker v-model="editedItem.date" no-title scrollable>
             <v-spacer></v-spacer>
-            <v-btn text color="primary" @click="menu = false"> Cancel </v-btn>
+            <v-btn text color="primary" @click="date = false"> Cancel </v-btn>
             <v-btn text color="primary" @click="$refs.menu.save(editedItem.date)"> OK </v-btn>
         </v-date-picker>
     </v-menu>
