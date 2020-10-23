@@ -21,9 +21,9 @@ export default {
         isValid: true,
         customers: [],
         customer: {
-            firstname: null,
-            lastname: null,
-            email: null,
+            firstname: String,
+            lastname: String,
+            email: String,
         },
 
         nameRules: [(v) => !!v || "Name is required", (v) => v.length <= 10 || "Name must be less than 10 characters"],
@@ -49,7 +49,7 @@ export default {
     },
 
     methods: {
-        //get all customers endpoint call
+        //get all jobs endpoint call
         initialize() {
             this.jobs = [
                 {
@@ -114,8 +114,20 @@ export default {
                 {
                     firstname: "name",
                     lastname: "surname",
-                    phone: "0123456789",
-                    cars: "",
+                    phone: "01234567891",
+                    cars: [],
+                },
+                {
+                    firstname: "name2",
+                    lastname: "surname2",
+                    phone: "01234567891",
+                    cars: [],
+                },
+                {
+                    firstname: "name3",
+                    lastname: "surname3",
+                    phone: "01234567891",
+                    cars: [],
                 },
             ];
         },

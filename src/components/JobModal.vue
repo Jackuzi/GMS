@@ -68,18 +68,28 @@ export default {
     data() {
         return {
             editedItem: {
-                jobNo: null,
-                date: null,
-                car: null,
-                description: null,
-                parts: null,
+                jobNo: String,
+
+                date: Date,
+                car: Object,
+                description: String,
+                parts: Array,
             },
             defaultItem: {
-                jobNo: null,
+                jobNo: String,
+
                 date: new Date().toISOString().substr(0, 10),
-                car: null,
-                description: null,
-                parts: null,
+                ownedCars: Array,
+                car: {
+                    Reg: String,
+                    Make: String,
+                    Model: String,
+                    Year: Number,
+                    Mileage: Number,
+                    Color: String,
+                },
+                description: String,
+                parts: Array,
             },
 
             dial: this.dialog,
