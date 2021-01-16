@@ -26,11 +26,14 @@
             </v-list>
         </v-navigation-drawer>
 
-        <v-app-bar app clipped-left color="green" dense>
+        <v-app-bar app clipped-left color="#6A76AB" dense shrink-on-scroll src="assets/11207.jpg">
+            <template v-slot:img="{ props }">
+                <v-img v-bind="props" max-height="200" gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"></v-img>
+            </template>
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-icon color="white darken-1" class="mx-4" large @click="$router.push('/').catch((err) => {})">mdi-car</v-icon>
             <v-toolbar-title class="mr-12 align-center" style="cursor: pointer" @click="$router.push('/').catch((err) => {})">
-                <span class="title">Garage</span>
+                <!-- <span class="title">Garage</span> -->
             </v-toolbar-title>
             <v-spacer></v-spacer>
         </v-app-bar>
