@@ -22,13 +22,13 @@
                             <v-col cols="12" md="4">
                                 <DatePicker :editedItem="editedItem" />
                             </v-col>
-                            <!-- 
-                            <v-col cols="12" md="4">
-                                <v-text-field v-model="customer.lastname" :rules="nameRules" :counter="10" label="Last name" required></v-text-field>
+
+                            <!-- <v-col cols="12" md="4">
+                                <v-text-field v-model="editedItem.customer.lastname" :rules="nameRules" :counter="10" label="Last name" required></v-text-field>
                             </v-col>
 
                             <v-col cols="12" md="4">
-                                <v-text-field v-model="customer.email" :rules="emailRules" label="E-mail" required></v-text-field>
+                                <v-text-field v-model="editedItem.customer.email" :rules="emailRules" label="E-mail" required></v-text-field>
                             </v-col> -->
                         </v-row>
                     </v-container>

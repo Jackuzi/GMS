@@ -1,22 +1,28 @@
 <template>
-    <v-data-table :headers="headers" :items="jobs" sort-by="date" class="elevation-1">
-        <template v-slot:item.actions="{ item }">
-            <JobModal :modal.sync="dialog" :item="item" :jobs="jobs" />
-        </template>
-        <template v-slot:no-data>
-            <v-btn color="primary" @click="initialize">Reset</v-btn>
-        </template>
-    </v-data-table>
+    <div>
+        <v-data-table :headers="headers" :search="search" :items="jobs" sort-by="date" class="elevation-1">
+            <template v-slot:top>
+                <v-text-field class="mx-4" v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details></v-text-field>
+            </template>
+            <template v-slot:item.actions="{ item }">
+                <JobModal :modal.sync="dialog" :item="item" :jobs="jobs" />
+            </template>
+            <template v-slot:no-data>
+                <v-btn color="primary" @click="initialize">Reset</v-btn>
+            </template>
+        </v-data-table>
+    </div>
 </template>
 
 <script>
-import JobModal from "../components/JobModal";
+import JobModal from "@/components/JobModal";
 
 export default {
     components: { JobModal },
     //get all jobs endpoint call
 
     data: () => ({
+        search: "",
         dialog: false,
         isValid: true,
         customers: [],
