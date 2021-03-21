@@ -71,7 +71,7 @@
 
             <tr class="total">
                 <td colspan="3"></td>
-                <td>Total: ${{ total | currency }}</td>
+                <td>Total: £{{ total | currency }}</td>
             </tr>
         </table>
     </div>

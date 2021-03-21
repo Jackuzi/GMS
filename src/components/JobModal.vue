@@ -15,12 +15,42 @@
                 <v-form v-model="localIsValid">
                     <v-container>
                         <v-row>
+                            <!-- Job number, to be removed and automatically assigned by backend? -->
                             <v-col cols="12" md="4">
                                 <v-text-field v-model="editedItem.jobNo" :rules="[(v) => !!v || 'jobNo is required']" :counter="10" label="Job No" required></v-text-field>
                             </v-col>
 
+                            <!-- Date picker -->
                             <v-col cols="12" md="4">
                                 <DatePicker :editedItem="editedItem" />
+                            </v-col>
+
+                            <!-- car choice dropdown -->
+                            <v-col cols="12" md="4">
+                                <v-autocomplete v-model="car" :disabled="isUpdating" :items="cars" chips color="blue-grey lighten-2" label="Select cars" item-text="name" item-value="name" multiple>
+                                    <template v-slot:selection="data">
+                                        <v-chip v-bind="data.attrs" :input-value="data.selected" close @click="data.select" @click:close="remove(data.item)">
+                                            <v-avatar left>
+                                                <v-img :src="data.item.avatar"></v-img>
+                                            </v-avatar>
+                                            {{ data.item.name }}
+                                        </v-chip>
+                                    </template>
+                                    <template v-slot:item="data">
+                                        <template v-if="typeof data.item !== 'object'">
+                                            <v-list-item-content v-text="data.item"></v-list-item-content>
+                                        </template>
+                                        <template v-else>
+                                            <v-list-item-avatar>
+                                                <img :src="data.item.avatar" />
+                                            </v-list-item-avatar>
+                                            <v-list-item-content>
+                                                <v-list-item-title v-html="data.item.name"></v-list-item-title>
+                                                <v-list-item-subtitle v-html="data.item.group"></v-list-item-subtitle>
+                                            </v-list-item-content>
+                                        </template>
+                                    </template>
+                                </v-autocomplete>
                             </v-col>
 
                             <!-- <v-col cols="12" md="4">
@@ -116,6 +146,8 @@ export default {
         },
 
         save() {
+            //Call endpoint and check message, then try to update front end
+
             if (this.editedIndex > -1) {
                 Object.assign(this.jobs[this.editedIndex], this.editedItem);
             } else {
@@ -128,11 +160,6 @@ export default {
             this.editedIndex = this.jobs.indexOf(item);
             this.editedItem = Object.assign({}, item);
             this.dial = true;
-        },
-
-        deleteItem(item) {
-            const index = this.jobs.indexOf(item);
-            confirm("Are you sure you want to delete this item?") && this.jobs.splice(index, 1);
         },
     },
 

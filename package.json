@@ -1,5 +1,5 @@
 {
-  "name": "clientapp",
+  "name": "monster_garage",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "python": "0.0.4",
     "vue": "^2.6.10",
     "vue-router": "^3.4.2",
-    "vuetify": "^2.4.3"
+    "vuetify": "^2.4.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
